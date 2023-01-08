@@ -1,0 +1,425 @@
+{
+    "cards": [
+        {
+            "name": "Cartilla Nacional De Salud Para Niñas Y Niños De 0 - 9 Años",
+            "ageMax": 9,
+            "ageMin": 1,
+            "scheme":[
+                {
+                    "vaccine": {
+                        "name": "BCG",
+                        "description": "Tuberculosis meningea y miliar",
+                        "dose":[
+                            {
+                                "type": "Única",
+                                "age": 0,
+                                "months": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Hepatitis B",
+                        "description": "Hepatitis B",
+                        "dose":[
+                            {
+                                "type": "Única",
+                                "age": 0,
+                                "months": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Hexavalente DPaT+VPI+Hib+HepB",
+                        "description": "Difteria, Tosferina, Tétanos, Poliomielitis, Hepatitis B y enfermedades graves por Haemophilus, influenza tipo b, como neumonia y meningitis",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 0,
+                                "months": 2
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 0,
+                                "months": 4
+                            },
+                            {
+                                "type": "Tercera",
+                                "age": 0,
+                                "months": 6
+                            },
+                            {
+                                "type": "Cuarta",
+                                "age": 1,
+                                "months": 6
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "DPT",
+                        "description": "Difteria, tosferina y tétanos",
+                        "dose":[
+                            {
+                                "type": "Refuerzo",
+                                "age": 4,
+                                "months": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Rotavirus",
+                        "description": "Diarrea por rotavirus",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 0,
+                                "months": 2
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 0,
+                                "months": 2
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Neumocócica conjugada",
+                        "description": "Neumonía, meningitis y otras enfermedades graves causadas por neumococo",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 0,
+                                "months": 2
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 0,
+                                "months": 4
+                            },
+                            {
+                                "type": "Refuerzo",
+                                "age": 1,
+                                "months": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Influenza",
+                        "description": "Neumonía por virus de la influenza A y B",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 0,
+                                "months": 6
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 0,
+                                "months": 7
+                            },
+                            {
+                                "type": "Temporada Invernal 1",
+                                "age": 1,
+                                "months": 0
+                            },
+                            {
+                                "type": "Temporada Invernal 2",
+                                "age": 2,
+                                "months": 0
+                            },
+                            {
+                                "type": "Temporada Invernal 3",
+                                "age": 3,
+                                "months": 0
+                            },
+                            {
+                                "type": "Temporada Invernal 4",
+                                "age": 4,
+                                "months": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "SRP (tripe viral)",
+                        "description": "Sarampión rubéola y paperas",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 1,
+                                "months": 0
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 6,
+                                "months": 0
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cartilla Nacional De Salud Para Adolecentes de 10 a 19 Años",
+            "ageMax": 19,
+            "ageMin": 10,
+            "scheme":[
+                {
+                    "vaccine": {
+                        "name": "Hepatitis B (Los que no se han vacunado)",
+                        "description": "Hepatitis B",
+                        "dose":[
+                            {
+                                "type": "Primera",
+                                "age": 11,
+                                "months": 0
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 11,
+                                "months": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Td",
+                        "description": "Tétanos y Difeteria",
+                        "dose":[
+                            {
+                                "type": "Refuerzo",
+                                "age": 11,
+                                "months": 0
+                            },
+                            {
+                                "type": "Primera (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Segunda (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Tercera (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Tdpa",
+                        "description": "Tétanos, Difeteria y Tos ferina",
+                        "dose":[
+                            {
+                                "type": "Única (A las 20 Semanas del embarazo)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Influenza estacional",
+                        "description": "Influenza (Cualquier trimestre del embarazo)",
+                        "dose":[
+                            {
+                                "type": "Única",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "SR (Los que no han sido vacunados o tienen esquema incompleto)",
+                        "description": "Sarampión y Rubéola",
+                        "dose":[
+                            {
+                                "type": "Primera (Sin antecedente vacunal) (En el primer contacto)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Segunda (Sin antecedene vacunal) (4 semanas despues de la primera)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Dosis Única (Con esquema incompleto) (En el primer contacto)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "VHP",
+                        "description": "Infección por el Virus del Papiloma Humano y Cáncer Cervico-Uterino",
+                        "dose":[
+                            {
+                                "type": "Primera (Mujeres en el 5° grado de primaria y de 11 años de edad no escolarizadas)",
+                                "age": 0,
+                                "months": 2
+                            },
+                            {
+                                "type": "Segunda (Seis meses despúes de la primera dosis)",
+                                "age": 0,
+                                "months": 4
+                            },
+                            {
+                                "type": "Tercera (60 meses despúes de la primera dosis)",
+                                "age": 1,
+                                "months": 0
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cartilla Nacional De Salud Para La Mujer de 20 a 59 años",
+            "ageMax": 59,
+            "ageMin": 20,
+            "scheme":[
+                {
+                    "vaccine": {
+                        "name": "SR (Los que no han sido vacunados o tienen esquema incompleto hasta los 39 años de edad)",
+                        "description": "Sarampión y Rubéola",
+                        "dose":[
+                            {
+                                "type": "Primera (Sin antecedente vacunal) (En el primer contacto)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Segunda",
+                                "age": 11,
+                                "months": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Td",
+                        "description": "Tétanos y Difeteria",
+                        "dose":[
+                            {
+                                "type": "Refuerzo",
+                                "age": 11,
+                                "months": 0
+                            },
+                            {
+                                "type": "Primera (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Segunda (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Tercera (Esquema incompleto o no documentado)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Tdpa",
+                        "description": "Tétanos, Difeteria y Tos ferina",
+                        "dose":[
+                            {
+                                "type": "Única (A las 20 Semanas del embarazo)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "Influenza estacional",
+                        "description": "Influenza (Cualquier trimestre del embarazo)",
+                        "dose":[
+                            {
+                                "type": "Única",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "SR (Los que no han sido vacunados o tienen esquema incompleto)",
+                        "description": "Sarampión y Rubéola",
+                        "dose":[
+                            {
+                                "type": "Primera (Sin antecedente vacunal) (En el primer contacto)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Segunda (Sin antecedene vacunal) (4 semanas despues de la primera)",
+                                "age": -1,
+                                "months": -1
+                            },
+                            {
+                                "type": "Dosis Única (Con esquema incompleto) (En el primer contacto)",
+                                "age": -1,
+                                "months": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "vaccine": {
+                        "name": "VHP",
+                        "description": "Infección por el Virus del Papiloma Humano y Cáncer Cervico-Uterino",
+                        "dose":[
+                            {
+                                "type": "Primera (Mujeres en el 5° grado de primaria y de 11 años de edad no escolarizadas)",
+                                "age": 0,
+                                "months": 2
+                            },
+                            {
+                                "type": "Segunda (Seis meses despúes de la primera dosis)",
+                                "age": 0,
+                                "months": 4
+                            },
+                            {
+                                "type": "Tercera (60 meses despúes de la primera dosis)",
+                                "age": 1,
+                                "months": 0
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

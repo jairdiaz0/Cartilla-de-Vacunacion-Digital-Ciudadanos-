@@ -1,0 +1,32 @@
+{
+    "users":[
+        {
+            "logIn": {
+                "email": "admin@admin",
+                "password": "adminadmin"
+            },
+            "user": {
+                "firstName": "Linda",
+                "lastName":{
+                    "paternal": "Admin",
+                    "maternal": "Admin"
+                }
+            },
+            "cards": []
+        },
+        {
+          "logIn": {
+              "email": "admin@gmail.com",
+              "password": "adminadmin"
+          },
+          "user": {
+              "firstName": "Jair",
+              "lastName":{
+                  "paternal": "Admin",
+                  "maternal": "Admin"
+              }
+          },
+          "cards": []
+      }
+    ]
+}

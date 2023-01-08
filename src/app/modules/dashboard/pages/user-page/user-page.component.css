@@ -1,0 +1,23 @@
+.card:hover{
+    background-color: var(--color-3);
+    cursor: pointer;
+    border-style: dashed;
+    border-width: .25rem;
+}
+
+.card-header{
+    border-style: solid;
+    border-color:  var(--color-9);
+    border-width: .125rem;
+}
+
+.card-body{
+    border-style: dashed;
+    border-color:  var(--color-9);
+    border-width: .125rem;
+    border-top: 0;
+}
+
+.background-card-body{
+  background-image: var(--background-2);
+}

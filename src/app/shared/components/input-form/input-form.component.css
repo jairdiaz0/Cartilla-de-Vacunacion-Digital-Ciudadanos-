@@ -1,0 +1,34 @@
+.title {
+  font-variant: small-caps;
+}
+
+.text {
+  color: var(--color-txt-1);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+/*Aviso de que el campo es invalido*/
+input.ng-invalid.ng-touched {
+  border: solid 2px #721817 !important;
+}
+/*Aviso de que el campo es valido*/
+input.ng-valid.ng-touched {
+  border: solid 2px #0b6e4f !important;
+}
+/*Fondo del campo para el input*/
+input.default {
+  background-color: var(--color-2) !important;
+  font-weight: 500;
+}
+
+input.pages {
+  background-color: var(--color-4) !important;
+  font-weight: 500;
+}
+
+input{
+  border-style: dashed;
+  border-width: .125rem;
+  border-color: black;
+}

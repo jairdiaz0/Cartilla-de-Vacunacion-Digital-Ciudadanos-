@@ -1,0 +1,23 @@
+<main class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <p class="h3 text-center mb-4">Cartillas de Vacunación Disponibles</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 mb-3" *ngFor="let item of cards">
+      <div class="card">
+        <div class="card-header h6">
+          {{item.user.firstName+' '+item.user.lastName.paternal+' '+item.user.lastName.maternal}}
+        </div>
+        <div class="card-body background-card-body">
+          <blockquote class="blockquote mb-0">
+            <p class="h4">Esquema actual:</p>
+            <p class="h5 text-muted mb-5">Ciudadano de 20 a 59 años</p>
+            <footer class="blockquote-footer">20 de 50</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
