@@ -1,97 +1,76 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-/** Importaciones de datos .json */
-import * as dataRaw from '../../../data/users/users.json';
+import { CookieService } from 'ngx-cookie-service';
+import { Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private user: any;
-
-  setUser(user: any): void {
-    this.user = user;
+  constructor(
+    private _httpClient: HttpClient,
+    private _cookieService: CookieService
+  ) {}
+  /**Función que nos retorna la promesa de validar el token */
+  validSession() {
+    return this.validToken().toPromise();
+  }
+  /**Función que nos permite validar el token ingresado (Especializado para el Guard) */
+  private validToken(): Observable<any> {
+    const token = this.checkToken();
+    return this._httpClient.post(`${environment.url}/users/getUser`, { token });
   }
 
-  getUserName(): Array<string> {
-    if (this.user) {
-      return [
-        this.user.user.firstName,
-        this.user.user.lastName.paternal,
-        this.user.user.lastName.maternal,
-      ];
-    }
-    return [];
+  /**Función que nos permite eliminar el token de sesión */
+  deleteToken() {
+    this._cookieService.delete(environment.tokenName, '/');
   }
 
-  addCardToUser(card: any) {
-    if (this.user) {
-      this.user.cards.push(card);
-    }
+  /**Función que nos permite revisar si el token se sesión esta activo en las cookies */
+  checkToken() {
+    const token = this._cookieService.get(environment.tokenName);
+    return token;
   }
 
-  getCardsUser() {
-    if (this.user) {
-      return this.user.cards;
-    }
-    return undefined;
+  /**Función que nos permite enviar las credenciales y validar el logIn */
+  validLogin(email: String, password: String) {
+    return this.sendCredentials(email, password).toPromise();
   }
 
-  constructor() {}
-
-  /**Verifica si existe el token_session, en caso de existir lo elimina */
-  checkSession(): void {}
-  validLogin(email1: string, password1: string): boolean {
-    const { users } = dataRaw;
-    for (let index = 0; index < users.length; index++) {
-      const {
-        logIn: { email },
-        logIn: { password },
-      } = users[index];
-      if (email1 == email && password1 == password) {
-        this.user = users[index];
-        return true;
-      }
-    }
-    return false;
+  /**Nos permite verificar si existe el usuario, en caso de existir se pone el tokken_session */
+  private sendCredentials(email: String, password: String): Observable<any> {
+    const body = { email, password };
+    return this._httpClient.post(`${environment.url}/auth/logIn`, body).pipe(
+      tap((responseOK: any) => {
+        const { token } = responseOK;
+        if (token) {
+          this._cookieService.set(environment.tokenName, token, undefined, '/');
+        }
+      })
+    );
   }
 
+  /**Función que nos permite enviar las credenciales para la creación de un nuevo usuario */
   newUser(
     email: string,
     password: string,
     firstName: string,
     surnamePaternal: string,
     surnameMaternal: string
-  ): boolean {
-    const { users } = dataRaw;
+  ) {
     const user = {
-      logIn: {
-        email: email,
-        password: password,
-      },
-      user: {
-        firstName: firstName,
-        lastName: {
-          paternal: surnamePaternal,
-          maternal: surnameMaternal,
-        },
-      },
-      cards: [],
+      email,
+      password,
+      firstName,
+      surnamePaternal,
+      surnameMaternal,
     };
-    users.push(user);
-    return true;
+    return this.sendNewUser(user).toPromise();
   }
 
-  checkEmailUser(email1: string): boolean {
-    const { users } = dataRaw;
-    for (let index = 0; index < users.length; index++) {
-      const {
-        logIn: { email },
-      } = users[index];
-      if (email == email1) {
-        return true;
-      }
-    }
-    return false;
+  /**Método que nos permite enviar las credenciales a la API */
+  private sendNewUser(user: any): Observable<any> {
+    return this._httpClient.post(`${environment.url}/auth/signIn`, user);
   }
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { SessionGuard } from 'src/app/core/guards/session.guard';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
+import { UserServiceService } from 'src/app/shared/services/user-service.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,13 +10,14 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
 })
 export class HomePageComponent {
   constructor(
-    private _authService: AuthService
+    private _sessionGuard: SessionGuard
     ) {}
 
   ngOnInit(){
   }
 
   getUserName(): Array<string>{
-    return this._authService.getUserName();
+    const {firstName, surnamePaternal, surnameMaternal} = this._sessionGuard.user;
+    return [firstName, surnamePaternal, surnameMaternal];
   }
 }

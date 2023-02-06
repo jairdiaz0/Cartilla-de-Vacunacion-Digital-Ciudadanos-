@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
-import * as dataRaw from '../../../../data/cards/cards.json';
-
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
@@ -17,20 +15,7 @@ export class UserPageComponent {
   ){ }
 
   ngOnInit(){
-    this.cards = this._authService.getCardsUser();
+    // this.cards = this._authService.getCardsUser();
   }
-
-  // "user": {
-  //   "curp": curp.value,
-  //   "firstName": firstName.value,
-  //   "lastName": {
-  //     "paternal": surnamePaternal.value,
-  //     "maternal": surnameMaternal.value
-  //   },
-  //   "birthDay": {
-  //     "day": date.getDay(),
-  //     "month": date.getMonth(),
-  //     "year": date.getFullYear()
-  //   }
 
 }

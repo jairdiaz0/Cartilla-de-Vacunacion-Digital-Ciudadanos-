@@ -22,10 +22,6 @@ export class SignInPageComponent {
     this.alert.getStatus().success.title = 'Registro Correcto';
     this.alert.getStatus().failure.title =
       'Se ha producido un error inesperado';
-    this.alert.getStatus().sameEmail = this.alert.getObjectToCustom(
-      'Email ya registrado',
-      ['alert', 'alert-danger']
-    );
     this.alert.getStatus().noSamePassword = this.alert.getObjectToCustom(
       'Las contraseñas no coinciden',
       ['alert', 'alert-danger']
@@ -103,7 +99,7 @@ export class SignInPageComponent {
           type: 'password',
           formControl: 'password',
           flagShow: false,
-        }
+        },
       },
       passwordC: {
         class: ['col-12'],
@@ -179,7 +175,7 @@ export class SignInPageComponent {
   }
 
   /**Función que envia los datos para ingresar */
-  sendSignIn() {
+  async sendSignIn() {
     if (this.formLogin.valid) {
       this.alert.getStatus().flagShow = true;
       const {
@@ -189,24 +185,15 @@ export class SignInPageComponent {
         firstName,
         surnamePaternal,
         surnameMaternal,
-      } = this.formLogin.controls;
-      if (password.value === passwordC.value) {
-        if (!this._authService.checkEmailUser(email.value)) {
-          if (
-            this._authService.newUser(
-              email.value,
-              password.value,
-              firstName.value,
-              surnamePaternal.value,
-              surnameMaternal.value
-            )
-          ) {
-            this.alert.getStatus().default = this.alert.getStatus().success;
-            this.router.navigate(['/', 'auth']);
-          }
+      } = this.formLogin.value;
+      if (password === passwordC) {
+        const data = await this._authService.newUser(email, password, firstName, surnamePaternal, surnameMaternal);
+        if (data) {
+          this.alert.getStatus().default = this.alert.getStatus().success;
+          this.router.navigate(['/', 'auth']);
+        }else{
           this.alert.getStatus().default = this.alert.getStatus().failure;
         }
-        this.alert.getStatus().default = this.alert.getStatus().sameEmail;
       }
       this.alert.getStatus().default = this.alert.getStatus().noSamePassword;
     } else {

@@ -9,11 +9,9 @@ export class NavBarComponent {
 
   @Input() userName?: Array<string>;
 
-  title:string;
   options:any;
 
   constructor(){
-    this.title = "Usuario No Encontrado";
     this.options = [
       {
         text: 'Mi cuenta',
@@ -34,8 +32,5 @@ export class NavBarComponent {
   }
 
   ngOnInit(){
-    if(this.userName && this.userName?.length > 0){
-      this.title = this.userName[0];
-    }
   }
 }

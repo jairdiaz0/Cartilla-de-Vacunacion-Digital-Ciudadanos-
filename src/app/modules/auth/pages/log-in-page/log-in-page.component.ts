@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 
 //Importaciones de clases
 import { AlertClass } from '../../../../core/class/Alert.Class';
+import { UserServiceService } from 'src/app/shared/services/user-service.service';
 
 @Component({
   selector: 'app-log-in-page',
@@ -23,7 +24,12 @@ export class LogInPageComponent {
   alert = new AlertClass();
 
   /**Método constructor */
-  constructor(private _authService: AuthService, private router: Router) {
+  constructor(
+    private _authService: AuthService,
+    private router: Router,
+    private _userService: UserServiceService
+  ) {
+    this._authService.checkToken();
     this.title = {
       text: 'Cartilla Digital de Vacunación',
       class: ['h3', 'title'],
@@ -105,15 +111,19 @@ export class LogInPageComponent {
   }
 
   /**Función que envia los datos para ingresar */
-  sendLogin() {
+  async sendLogin() {
     this.alert.getStatus().flagShow = true;
     if (this.formLogin.valid) {
-      const { email, password } = this.formLogin.controls;
-      if (this._authService.validLogin(email.value, password.value)) {
-        this.alert.getStatus().default = this.alert.getStatus().success;
-        this.router.navigate(['/', 'home']);
+      const { email, password } = this.formLogin.value;
+      try {
+        const { token } = await this._authService.validLogin(email, password);
+        if (token) {
+          this.alert.getStatus().default = this.alert.getStatus().success;
+          this.router.navigate(['/', 'home']);
+        }
+      } catch (error) {
+        this.alert.getStatus().default = this.alert.getStatus().failure;
       }
-      this.alert.getStatus().default = this.alert.getStatus().failure;
     } else {
       this.alert.getStatus().default = this.alert.getStatus().noValid;
     }
